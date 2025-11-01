@@ -1,28 +1,34 @@
+/* --- Basis Reset --- */
 Html, body, ul, li {
 margin: 0;
 border: 0;
 padding: 0;
 }
+/* --- Canvas Styling (Het speelveld) --- /
 canvas {
 display: block;
 width: 762px;
+height: 500px; / Belangrijk: zorgt dat de achtergrond ruimte heeft /
 margin: 0 auto;
-/* --- AANPASSING VOOR DE ACHTERGRONDAFBEELDING --- /
-/ Het pad is aangepast van 'background.png' naar '../background.png' /
-/ Dit gaat één map omhoog (uit de 'css' map) om background.png te vinden. /
+border: 3px solid #333; / Een kleine rand om het speelveld te laten zien /
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); / Lichte schaduw */
+/* --- ACHTERGRONDAFBEELDING INSTELINGEN --- /
+/ Het pad is gecorrigeerd: gaat één map omhoog (uit de 'css' map) om background.png te vinden. */
 background-image: url('../background.png');
 background-size: cover;
 background-repeat: no-repeat;
 background-position: center;
 background-color: #000000;
-/ ------------------------------------------------ */
 }
+/* --- Overige Styling --- /
 p {
 text-align: center;
 }
 body {
 overflow: hidden;
 height: 100%;
+/ Een kleine achtergrondkleur voor de hele pagina /
+background-color: #222;
 }
 html {
 overflow: hidden;
@@ -30,6 +36,13 @@ height: 100%;
 }
 .info {
 position: absolute;
-top: 0;
-left: 0;
+top: 10px;
+left: 10px;
+color: white; / Zorgt dat de tekst zichtbaar is /
+background-color: rgba(0, 0, 0, 0.5);
+padding: 5px;
+border-radius: 5px;
+}
+.info a {
+color: #aaffaa; / Groene links */
 }
