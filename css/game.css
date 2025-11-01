@@ -1,32 +1,34 @@
-html, body, ul, li {
-  margin: 0;
-  border: 0;
-  padding: 0;
+Html, body, ul, li {
+margin: 0;
+border: 0;
+padding: 0;
 }
-
 canvas {
-  display: block;
-  width: 762;
-  margin: 0 auto;
-  background-color: blue;
+display: block;
+/* Ik heb 'px' toegevoegd aan de breedte, aangezien CSS-eenheden meestal nodig zijn */
+width: 762px;
+margin: 0 auto;
+/* --- AANPASSING VOOR DE ACHTERGRONDAFBEELDING --- /
+background-image: url('background.png'); / VERVANG dit met de directe URL van je afbeelding! /
+background-size: cover; / Zorgt ervoor dat de afbeelding de hele canvas vult, zonder herhaling /
+background-repeat: no-repeat; / Voorkomt dat de afbeelding herhaald wordt /
+background-position: center; / Zorgt ervoor dat de afbeelding mooi gecentreerd wordt /
+background-color: #000000; / Een fallback kleur (zwart) voor als de afbeelding niet laadt /
+/ ------------------------------------------------ */
 }
-
 p {
-  text-align: center;
+text-align: center;
 }
-
 body {
-  overflow: hidden;
-  height: 100%;
+overflow: hidden;
+height: 100%;
 }
-
 html {
-  overflow: hidden;
-  height: 100%;
+overflow: hidden;
+height: 100%;
 }
-
 .info {
-  position: absolute;
-  top: 0;
-  left: 0;
+position: absolute;
+top: 0;
+left: 0;
 }
