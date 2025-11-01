@@ -1,51 +1,70 @@
+/* * Stijlbestand voor de game.
+ * Doel: Achtergrondafbeelding toepassen op de volledige BODY en de CANVAS centreren
+ * voor optimale weergave op mobiele apparaten.
+ */
+
 /* --- Basis Reset --- */
 Html, body, ul, li {
     margin: 0;
     border: 0;
     padding: 0;
+    box-sizing: border-box; /* Zorgt ervoor dat padding en border in de breedte/hoogte zitten */
 }
+
 /* --- Canvas Styling (Het speelveld) --- */
 canvas {
     display: block;
-    /* De afmetingen in de CSS moeten overeenkomen met de waarden in game.js (762x720) 
-       Dit zorgt ervoor dat de canvas zelf de juiste ruimte heeft voor de achtergrond. */
-    width: 762px;
-    height: 720px; 
-    margin: 0 auto;
+    
+    /* Maakt de canvas responsief: Max 762px, maar vult 95% van de mobiele breedte */
+    max-width: 762px; 
+    width: 95vw; 
+    height: auto; /* De werkelijke hoogte moet in de JS worden ingesteld om de verhouding te behouden */
+    
+    /* Horizontale centrering is niet meer nodig door de BODY Flexbox */
+    margin: 0 auto; 
+    
     border: 3px solid #333; /* Een kleine rand om het speelveld te laten zien */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Lichte schaduw */
     
-    /* --- ACHTERGRONDAFBEELDING INSTELINGEN: VERWIJDERD UIT CANVAS --- */
-    /* De achtergrondafbeelding is verplaatst naar de 'body' tag. */
+    /* Achtergrond uit Canvas verwijderd en verplaatst naar de BODY */
     background-image: none;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    background-color: #000000;
+    background-color: #000000; /* Zorgt dat het canvas zelf zwart is */
 }
+
 /* --- Overige Styling --- */
 p {
     text-align: center;
 }
+
 body {
-    overflow: hidden;
-    height: 100%;
+    /* --- CENTRERING (Flexbox) --- */
+    min-height: 100vh; /* Zorgt dat de body de volledige vensterhoogte inneemt */
+    display: flex; /* Activeert Flexbox */
+    flex-direction: column; /* Stapelt elementen (canvas, info) verticaal */
+    justify-content: center; /* Centreert de inhoud verticaal */
+    align-items: center; /* Centreert de inhoud horizontaal */
     
-    /* --- ACHTERGRONDAFBEELDING INSTELINGEN: TOEGEVOEGD AAN BODY --- */
-    /* Het pad: '../1000009748.png' is correct, uitgaande van css/ naar hoofdmap */
-    background-image: url('../1000009748.png');
-    background-size: cover; /* Zorgt ervoor dat de afbeelding de hele body vult */
+    overflow-x: hidden; /* Voorkom horizontale scrollbalken */
+    
+    /* --- ACHTERGRONDAFBEELDING INSTELLINGEN: TOEGEVOEGD AAN BODY --- */
+    background-image: url('../1000009748.png'); /* Pad naar de Super Mario World achtergrond */
+    background-size: cover; /* Vult de hele pagina */
     background-repeat: no-repeat;
     background-position: center top; /* Positioneert de achtergrond in het midden bovenaan */
-    background-attachment: fixed; /* Houdt de achtergrond vast tijdens scrollen (indien mogelijk) */
+    background-attachment: fixed; /* Houdt de achtergrond vast */
 
-    /* De kleine achtergrondkleur voor de hele pagina */
+    /* De kleine achtergrondkleur voor de hele pagina (als fallback) */
     background-color: #222;
 }
+
 html {
-    overflow: hidden;
     height: 100%;
+    overflow-x: hidden;
 }
+
 .info {
     position: absolute;
     top: 10px;
@@ -54,7 +73,9 @@ html {
     background-color: rgba(0, 0, 0, 0.5);
     padding: 5px;
     border-radius: 5px;
+    z-index: 10; /* Zorgt ervoor dat de info boven de canvas staat */
 }
+
 .info a {
     color: #aaffaa; /* Groene links */
 }
