@@ -5,15 +5,16 @@ padding: 0;
 }
 canvas {
 display: block;
-/* Ik heb 'px' toegevoegd aan de breedte, aangezien CSS-eenheden meestal nodig zijn */
 width: 762px;
 margin: 0 auto;
 /* --- AANPASSING VOOR DE ACHTERGRONDAFBEELDING --- /
-background-image: url('background.png'); / VERVANG dit met de directe URL van je afbeelding! /
-background-size: cover; / Zorgt ervoor dat de afbeelding de hele canvas vult, zonder herhaling /
-background-repeat: no-repeat; / Voorkomt dat de afbeelding herhaald wordt /
-background-position: center; / Zorgt ervoor dat de afbeelding mooi gecentreerd wordt /
-background-color: #000000; / Een fallback kleur (zwart) voor als de afbeelding niet laadt /
+/ Het pad is aangepast van 'background.png' naar '../background.png' /
+/ Dit gaat één map omhoog (uit de 'css' map) om background.png te vinden. /
+background-image: url('../background.png');
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
+background-color: #000000;
 / ------------------------------------------------ */
 }
 p {
