@@ -15,9 +15,9 @@ canvas {
     border: 3px solid #333; /* Een kleine rand om het speelveld te laten zien */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Lichte schaduw */
     
-    /* --- ACHTERGRONDAFBEELDING INSTELINGEN --- */
-    /* Het pad verwijst correct één map omhoog (..) naar 1000009748.png */
-    background-image: url('../1000009748.png');
+    /* --- ACHTERGRONDAFBEELDING INSTELINGEN: VERWIJDERD UIT CANVAS --- */
+    /* De achtergrondafbeelding is verplaatst naar de 'body' tag. */
+    background-image: none;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -30,7 +30,16 @@ p {
 body {
     overflow: hidden;
     height: 100%;
-    /* Een kleine achtergrondkleur voor de hele pagina */
+    
+    /* --- ACHTERGRONDAFBEELDING INSTELINGEN: TOEGEVOEGD AAN BODY --- */
+    /* Het pad: '../1000009748.png' is correct, uitgaande van css/ naar hoofdmap */
+    background-image: url('../1000009748.png');
+    background-size: cover; /* Zorgt ervoor dat de afbeelding de hele body vult */
+    background-repeat: no-repeat;
+    background-position: center top; /* Positioneert de achtergrond in het midden bovenaan */
+    background-attachment: fixed; /* Houdt de achtergrond vast tijdens scrollen (indien mogelijk) */
+
+    /* De kleine achtergrondkleur voor de hele pagina */
     background-color: #222;
 }
 html {
