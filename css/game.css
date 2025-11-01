@@ -1,48 +1,52 @@
 /* --- Basis Reset --- */
 Html, body, ul, li {
-margin: 0;
-border: 0;
-padding: 0;
+    margin: 0;
+    border: 0;
+    padding: 0;
 }
-/* --- Canvas Styling (Het speelveld) --- /
+/* --- Canvas Styling (Het speelveld) --- */
 canvas {
-display: block;
-width: 762px;
-height: 500px; / Belangrijk: zorgt dat de achtergrond ruimte heeft /
-margin: 0 auto;
-border: 3px solid #333; / Een kleine rand om het speelveld te laten zien /
-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); / Lichte schaduw */
-/* --- ACHTERGRONDAFBEELDING INSTELINGEN --- /
-/ Het pad is gecorrigeerd: gaat één map omhoog (uit de 'css' map) om background.png te vinden. */
-background-image: url('../background.png');
-background-size: cover;
-background-repeat: no-repeat;
-background-position: center;
-background-color: #000000;
+    display: block;
+    /* De afmetingen in de CSS moeten overeenkomen met de waarden in game.js (762x720) 
+       Dit zorgt ervoor dat de canvas zelf de juiste ruimte heeft voor de achtergrond. */
+    width: 762px;
+    height: 720px; 
+    margin: 0 auto;
+    border: 3px solid #333; /* Een kleine rand om het speelveld te laten zien */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Lichte schaduw */
+    
+    /* --- ACHTERGRONDAFBEELDING INSTELINGEN --- */
+    /* Het pad verwijst correct één map omhoog (..) naar 1000009748.png */
+    background-image: url('../1000009748.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #000000;
 }
-/* --- Overige Styling --- /
+/* --- Overige Styling --- */
 p {
-text-align: center;
+    text-align: center;
 }
 body {
-overflow: hidden;
-height: 100%;
-/ Een kleine achtergrondkleur voor de hele pagina /
-background-color: #222;
+    overflow: hidden;
+    height: 100%;
+    /* Een kleine achtergrondkleur voor de hele pagina */
+    background-color: #222;
 }
 html {
-overflow: hidden;
-height: 100%;
+    overflow: hidden;
+    height: 100%;
 }
 .info {
-position: absolute;
-top: 10px;
-left: 10px;
-color: white; / Zorgt dat de tekst zichtbaar is /
-background-color: rgba(0, 0, 0, 0.5);
-padding: 5px;
-border-radius: 5px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: white; /* Zorgt dat de tekst zichtbaar is */
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px;
+    border-radius: 5px;
 }
 .info a {
-color: #aaffaa; / Groene links */
+    color: #aaffaa; /* Groene links */
 }
+
