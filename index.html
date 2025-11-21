@@ -5,22 +5,18 @@
     <title>Super Mario Bros</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- NES resolutie: 256x240, schaalbaar -->
     <meta name="description" content="A Mario-style platformer built in JavaScript.">
 
     <link rel="stylesheet" href="css/game.css">
   </head>
 
   <body>
-    <!-- JavaScript-bestanden -->
-    <!-- Utility en basisfuncties -->
     <script src="js/util.js"></script>
     <script src="js/input.js"></script>
     <script src="js/resources.js"></script>
     <script src="js/sprite.js"></script>
     <script src="js/entity.js"></script>
 
-    <!-- Game-elementen -->
     <script src="js/pipe.js"></script>
     <script src="js/mushroom.js"></script>
     <script src="js/fireflower.js"></script>
@@ -36,18 +32,14 @@
     <script src="js/prop.js"></script>
     <script src="js/flag.js"></script>
 
-    <!-- Speler moet vóór levels geladen worden -->
     <script src="js/player.js"></script>
 
-    <!-- Levels -->
     <script src="js/levels/level.js"></script>
     <script src="js/levels/11.js"></script>
     <script src="js/levels/11tunnel.js"></script>
 
-    <!-- Game loop / main -->
     <script src="js/game.js"></script>
 
-    <!-- UI -->
     <div class="info">
       <p class="controls">Move: Arrow Keys, Jump: X, Run: Z</p>
       <div class="links">
@@ -57,5 +49,19 @@
         <a href="www.abelsoftware123.com" target="_blank">GitHub</a>
       </div>
     </div>
+    
+    <div class="touch-controls">
+      <div class="dpad">
+        <button id="touch-left" class="touch-btn left">◀</button>
+        <button id="touch-right" class="touch-btn right">▶</button>
+      </div>
+      <div class="action-btns">
+        <button id="touch-run" class="touch-btn run">Z/Run</button>
+        <button id="touch-jump" class="touch-btn jump">X/Jump</button>
+      </div>
+    </div>
+    
+    <p class="mobile-hint">Gebruik de knoppen onderin op touch apparaten.</p>
+
   </body>
 </html>
