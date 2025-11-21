@@ -80,3 +80,101 @@ html {
     color: #aaffaa; /* Groene links */
 }
 
+/* --- NIEUWE STIJLEN VOOR TOUCH CONTROLS --- */
+
+/* --- Touch Controls Container --- */
+.touch-controls {
+    /* Plaatsing onderaan het scherm */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    
+    display: flex; /* Gebruik Flexbox voor de linker/rechter uitlijning */
+    justify-content: space-between; /* Links en rechts uitlijnen van de knoppen */
+    padding: 10px;
+    z-index: 20; /* Zorg dat ze bovenaan alles staan */
+    
+    /* Standaard niet zichtbaar op grote schermen */
+    display: none; 
+}
+
+/* Toon touch-controls alleen op kleinere schermen (mobiel) */
+@media (max-width: 768px) {
+    .touch-controls {
+        display: flex; 
+    }
+    
+    /* Zorg dat de standaard toetsenbordinstructie verdwijnt op mobiel */
+    .controls {
+        display: none;
+    }
+}
+
+/* --- Knoppen Styling --- */
+.touch-btn {
+    /* Algemene knopstijl */
+    width: 70px;
+    height: 70px;
+    border-radius: 50%; /* Ronde knop */
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    margin: 5px;
+    border: 3px solid rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    
+    /* Vulling / Transparantie */
+    background-color: rgba(0, 0, 0, 0.5); /* Donkere, half-transparante achtergrond */
+    
+    /* Visuele feedback bij aanraken */
+    transition: background-color 0.1s;
+    
+    /* Reset voor mobiele apparaten */
+    -webkit-tap-highlight-color: transparent; 
+}
+
+.touch-btn:active {
+    background-color: rgba(255, 255, 255, 0.2); /* Lichter bij aanraking */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* Aanpassingen voor de verschillende groepen */
+.dpad {
+    display: flex;
+    gap: 10px; /* Ruimte tussen de linker en rechter knop */
+}
+
+.action-btns {
+    display: flex;
+    align-items: center; /* Verticale centrering van de actieknoppen */
+}
+
+.action-btns .run {
+    width: 60px; /* Iets kleinere 'Run' knop */
+    height: 60px;
+    font-size: 16px;
+    background-color: rgba(200, 50, 50, 0.7); /* Rode kleur voor Run */
+}
+
+.action-btns .jump {
+    background-color: rgba(50, 50, 200, 0.7); /* Blauwe kleur voor Jump */
+}
+
+/* Style voor de mobiele hint */
+.mobile-hint {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+/* Zorg dat de hint alleen op mobiel zichtbaar is */
+@media (min-width: 769px) {
+    .mobile-hint {
+        display: none;
+    }
+}
